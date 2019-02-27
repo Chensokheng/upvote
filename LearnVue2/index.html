@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <div id="app">
+        <h2 class="title has-text-centered dividing-header">UpVote!</h2>
+        <!-- input from the user -->
+        <div style="width:700px; margin:10px auto;text-align: center;">
+            <div class="field">
+                <div class="control">
+                    <input class="input is-primary" type="text" placeholder="Enter your name" v-model='name' required>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <input class="input is-primary" type="text" placeholder="Enter your post" v-model='description'
+                        required>
+                </div>
+            </div>
+            <button class="button is-success" @click='getUserInput' type="submit">Post</button>
+        </div>
+        <!-- end of input -->
+
+        <div class="container box is-fluid" style="width:700px; margin:10px auto;"
+            v-for='(submission,index) in sortSubmission' v-bind:key='submission.id' v-if='check'>
+            <article class="media">
+
+
+            </article>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
